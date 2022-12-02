@@ -1,0 +1,58 @@
+import random
+inventory = ["Empty", "Empty", "Empty"]
+money = 20
+
+
+def Shop(money):
+    doExit = False
+    while doExit == False:
+        print("Welcome to the shop, you got, ", money, "coins.")
+        print()
+        print("Your items: ", inventory)
+        print()
+        print("Shop items: Potions $5, Food: $3, Keys: $10")
+        print()
+        print("Press P for potions, F for food, and K for keys or Q to quit")
+        choice = input()
+        if choice == 'p':
+            if money >= 5:
+                print("You got a potion!")
+                inventory[0] = "potion"
+                money -= 5
+            else:
+                print("You don't have enough money for that on god!")
+            print()
+            
+        elif choice == 'f':
+            if money >= 3:
+                print("You got some food!")
+                inventory[1] = "food"
+                money -= 3
+            else:
+                print("You don't have enough money for that on god!")
+            print()
+            
+        elif choice == 'k':
+            if money >= 10:
+                print("You got a key no cap!")
+                inventory[2] = "key"
+                money -= 10
+            else:
+                print("You don't have enough money for that yo")
+            print()
+            
+        elif choice == 'q':
+            print("Quitting now bye!")
+            print()
+            
+            doExit = True 
+        else:
+            print("Thats not an option")
+            print()
+            
+
+room = 1
+print("You are in room 1")
+
+if room == 1:
+    Shop(money)
